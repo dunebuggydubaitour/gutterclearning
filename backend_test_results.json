@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-04-05T20:21:55.355950",
+  "total_tests": 9,
+  "passed_tests": 9,
+  "success_rate": "100.0%",
+  "results": [
+    {
+      "test": "API Root",
+      "success": true,
+      "details": "Status: 200, Message: Gutter Cleaning Jacksonville Florida API"
+    },
+    {
+      "test": "Create Lead",
+      "success": true,
+      "details": "Status: 200, Lead ID: 02be9eb3-04ca-41fb-9411-24426b627525"
+    },
+    {
+      "test": "Admin Login (Valid)",
+      "success": true,
+      "details": "Status: 200, Success: True"
+    },
+    {
+      "test": "Admin Login (Invalid)",
+      "success": true,
+      "details": "Status: 401 (Expected 401)"
+    },
+    {
+      "test": "Get Leads",
+      "success": true,
+      "details": "Status: 200, Leads count: 2"
+    },
+    {
+      "test": "Get Leads (Unauthorized)",
+      "success": true,
+      "details": "Status: 401 (Expected 401)"
+    },
+    {
+      "test": "Get Stats",
+      "success": true,
+      "details": "Status: 200, Total: 2, New: 2, Contacted: 0"
+    },
+    {
+      "test": "Update Lead Status",
+      "success": true,
+      "details": "Status: 200, Success: True"
+    },
+    {
+      "test": "Delete Lead",
+      "success": true,
+      "details": "Status: 200, Success: True"
+    }
+  ]
+}

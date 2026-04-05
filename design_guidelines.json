@@ -1,0 +1,122 @@
+{
+  "theme": "Light",
+  "archetype": "Archetype 1 (Organic & Earthy - Adapted for Local Service Trust)",
+  "design_philosophy": "High-end, trustworthy local service aesthetic. Avoid the typical 'cheap contractor' look. Use deep slate blues and vibrant leaf greens to build credibility. Generous whitespace, crisp typography, and high-quality photography to position the business as Jacksonville's premium choice.",
+  "colors": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8FAFC",
+      "tertiary": "#F1F5F9"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "inverse": "#FFFFFF"
+    },
+    "brand": {
+      "primary": "#1E3A8A",
+      "primary_hover": "#1E40AF",
+      "secondary": "#10B981",
+      "accent": "#F59E0B"
+    },
+    "border": {
+      "default": "#E2E8F0",
+      "focus": "#1E3A8A"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Cabinet Grotesk",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "sizes": {
+      "h1": "text-5xl md:text-6xl tracking-tight font-bold",
+      "h2": "text-3xl md:text-4xl tracking-tight font-bold",
+      "h3": "text-xl md:text-2xl font-semibold",
+      "h4": "text-lg md:text-xl font-semibold",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm uppercase tracking-widest font-semibold"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "section_padding": "py-20 md:py-32",
+      "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      "grid_gap": "gap-8 md:gap-12"
+    },
+    "patterns": {
+      "hero": "Relative container with high-quality background image, heavy white-to-transparent or dark-to-transparent gradient overlay to ensure text contrast. Keep CTA text left-aligned.",
+      "services": "Bento-style grid (Mode A). Use col-span-12 md:col-span-4 for cards. Cards should have p-8, bg-white, border border-slate-200, shadow-sm, hover:-translate-y-1 transition-transform duration-300.",
+      "admin": "Control Room grid (Mode B). Dense data presentation using Shadcn Tables. Tight gap-4, h-full utilization."
+    }
+  },
+  "surfaces": {
+    "header": "Sticky with backdrop-blur-xl bg-white/80 border-b border-slate-200 z-50. Include a top announcement bar (bg-blue-900 text-white) for the 10% new customer discount.",
+    "cards": "Solid background (bg-white), rounded-xl, 1px border-slate-200, shadow-sm.",
+    "buttons": {
+      "primary": "bg-blue-900 text-white hover:bg-blue-800 rounded-lg px-8 py-4 font-semibold shadow-md transition-colors",
+      "secondary": "bg-emerald-600 text-white hover:bg-emerald-700 rounded-lg px-8 py-4 font-semibold shadow-md transition-colors",
+      "outline": "border-2 border-slate-200 text-slate-900 hover:border-slate-900 rounded-lg px-8 py-4 font-semibold transition-colors"
+    }
+  },
+  "components": {
+    "marketing": {
+      "strategy": "Custom HTML/Tailwind. Do not use Shadcn for the main marketing layouts. Use raw divs, sections for fluid asymmetrical layouts.",
+      "hero_cta": "Use large H1, prominent Primary Button ('Get a Free Quote'), and a Secondary Outline Button ('Call 877-736-0586').",
+      "testimonials": "Grid of cards with client photos, 5-star SVG icons, and verified text.",
+      "faq": "Can use Shadcn Accordion customized to fit the theme.",
+      "pricing_tables": "3-column grid showing typical costs (e.g., Single Story, Two Story, Commercial). Use heavy borders for the 'Recommended' tier.",
+      "process_steps": "Vertical timeline or 6-block grid using bold numerals (01, 02...) in JetBrains Mono or large Cabinet Grotesk."
+    },
+    "interactive": {
+      "strategy": "Use customized Shadcn components for forms, tables, and accordions.",
+      "contact_form": "Shadcn Form, Input, Textarea, Button. Ensure robust validation.",
+      "admin_panel": "Shadcn Table for Leads, Card for quick stats. Simple layout: Sidebar nav + main content area."
+    }
+  },
+  "media": {
+    "images": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1647579350687-d409523aabcc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwzfHxmbG9yaWRhJTIwaG91c2UlMjBleHRlcmlvcnxlbnwwfHx8fDE3NzU0MTk1OTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Florida house exterior for the main hero section. Use a white gradient overlay from the left."
+      },
+      "service_worker": {
+        "url": "https://images.unsplash.com/photo-1556137805-b67cc1d7d328?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxndXR0ZXIlMjBjbGVhbmluZ3xlbnwwfHx8fDE3NzU0MTk2MTZ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional working on roof/gutters. Use in About Us or Services section."
+      },
+      "before_gutter": {
+        "url": "https://images.unsplash.com/photo-1744044155829-610dded4cead?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxndXR0ZXIlMjBjbGVhbmluZ3xlbnwwfHx8fDE3NzU0MTk2MTZ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Dirty gutters. Use in Before/After section."
+      },
+      "after_gutter": {
+        "url": "https://images.pexels.com/photos/20113440/pexels-photo-20113440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Clean water flowing. Use in Before/After section."
+      },
+      "testimonial_portrait": {
+        "url": "https://images.unsplash.com/photo-1590852139969-0265cb582a90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGhvbWVvd25lciUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NTQxOTU5OXww&ixlib=rb-4.1.0&q=85",
+        "description": "Happy homeowner. Use in Testimonials."
+      }
+    },
+    "icons_strategy": "Use lucide-react (already installed). Key icons: CheckCircle (green) for trust badges, Phone, MapPin, Star (amber), Shield (blue)."
+  },
+  "seo_and_content": {
+    "h1_strategy": "Include 'Gutter Cleaning Jacksonville Florida' naturally in the H1.",
+    "trust_badges": "Always visible 'Licensed & Insured', '10% New Customer Discount', '5-Star Rated'.",
+    "contact_info": {
+      "phone": "877-736-0586",
+      "email": "support@guttercleaningjacksonvilleflorida.com",
+      "address": "3937 Spring Park Rd, Jacksonville, FL 32207"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Ensure all marketing layouts use custom HTML/Tailwind classes (divs, sections), not Shadcn structural components.",
+    "Use Cabinet Grotesk for headings, strictly tracking-tight.",
+    "Integrate Lucide React icons for trust badges (Shield, CheckCircle2) prominently in the hero and footer.",
+    "Ensure the contact form routes to the backend and inserts into the database, viewable via the Admin panel.",
+    "Embed real Google Maps iframe on the Service Area page using the provided address.",
+    "The admin panel must use Shadcn Table for leads. Keep it simple and functional.",
+    "Add data-testid attributes to all interactive elements (buttons, inputs, links).",
+    "Install specific fonts via Google Fonts in index.css (Cabinet Grotesk / Manrope)."
+  ]
+}

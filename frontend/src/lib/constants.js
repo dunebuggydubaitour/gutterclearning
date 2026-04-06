@@ -70,6 +70,7 @@ export const NAV_LINKS = [
   { to: "/cost-guide", label: "Cost Guide" },
   { to: "/about", label: "About" },
   { to: "/service-areas", label: "Service Areas" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];

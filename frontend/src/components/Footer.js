@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Shield, ChevronRight } from "lucide-react";
-import { BUSINESS, SUB_SERVICES, SERVICE_AREAS } from "@/lib/constants";
+import { BUSINESS, SUB_SERVICES } from "@/lib/constants";
+import { AREA_PAGES } from "@/data/serviceAreas";
 
 const Footer = () => {
   return (
@@ -22,9 +23,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {[...SERVICE_AREAS.main, ...SERVICE_AREAS.neighborhoods].map((area, i) => (
-              <Link key={i} to="/service-areas" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
-                {area}{i < SERVICE_AREAS.main.length + SERVICE_AREAS.neighborhoods.length - 1 ? " |" : ""}
+            {AREA_PAGES.map((area, i) => (
+              <Link key={i} to={`/service-areas/${area.slug}`} className="text-xs text-slate-500 hover:text-slate-300 transition-colors" data-testid={`footer-area-${area.slug}`}>
+                {area.name}{i < AREA_PAGES.length - 1 ? " |" : ""}
               </Link>
             ))}
           </div>
@@ -73,6 +74,7 @@ const Footer = () => {
                 { to: "/services", label: "All Services" },
                 { to: "/cost-guide", label: "Cost Guide" },
                 { to: "/about", label: "About Us" },
+                { to: "/gallery", label: "Gallery" },
                 { to: "/service-areas", label: "Service Areas" },
                 { to: "/blog", label: "Blog" },
                 { to: "/contact", label: "Contact Us" },

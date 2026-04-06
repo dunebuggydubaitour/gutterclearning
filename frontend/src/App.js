@@ -17,6 +17,8 @@ import GutterGuardsPage from "@/pages/GutterGuardsPage";
 import DownspoutServicesPage from "@/pages/DownspoutServicesPage";
 import BlogListPage from "@/pages/BlogListPage";
 import BlogPostCleaningTime from "@/pages/BlogPostCleaningTime";
+import ServiceAreaDetailPage from "@/pages/ServiceAreaDetailPage";
+import GalleryPage from "@/pages/GalleryPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +49,8 @@ function AppLayout() {
           <Route path="/services/downspout-services" element={<DownspoutServicesPage />} />
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/how-long-does-it-take-to-clean-gutters" element={<BlogPostCleaningTime />} />
+          <Route path="/service-areas/:slug" element={<ServiceAreaDetailPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>

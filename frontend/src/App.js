@@ -10,6 +10,13 @@ import ServiceAreaPage from "@/pages/ServiceAreaPage";
 import ContactPage from "@/pages/ContactPage";
 import CostGuidePage from "@/pages/CostGuidePage";
 import AdminPage from "@/pages/AdminPage";
+import GutterInstallationPage from "@/pages/GutterInstallationPage";
+import GutterRepairPage from "@/pages/GutterRepairPage";
+import GutterReplacementPage from "@/pages/GutterReplacementPage";
+import GutterGuardsPage from "@/pages/GutterGuardsPage";
+import DownspoutServicesPage from "@/pages/DownspoutServicesPage";
+import BlogListPage from "@/pages/BlogListPage";
+import BlogPostCleaningTime from "@/pages/BlogPostCleaningTime";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +40,13 @@ function AppLayout() {
           <Route path="/service-areas" element={<ServiceAreaPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cost-guide" element={<CostGuidePage />} />
+          <Route path="/services/gutter-installation" element={<GutterInstallationPage />} />
+          <Route path="/services/gutter-repair" element={<GutterRepairPage />} />
+          <Route path="/services/gutter-replacement" element={<GutterReplacementPage />} />
+          <Route path="/services/gutter-guards" element={<GutterGuardsPage />} />
+          <Route path="/services/downspout-services" element={<DownspoutServicesPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/how-long-does-it-take-to-clean-gutters" element={<BlogPostCleaningTime />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>

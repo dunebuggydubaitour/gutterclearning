@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight, CheckCircle, Droplets, Shield, Wrench, Home } from "lucide-react";
-import { BUSINESS, SERVICES, IMAGES, PROCESS_STEPS } from "@/lib/constants";
+import { BUSINESS, SERVICES, IMAGES, PROCESS_STEPS, SUB_SERVICES } from "@/lib/constants";
 
 export default function ServicesPage() {
   return (
@@ -33,10 +33,10 @@ export default function ServicesPage() {
                   </h2>
                   <p className="text-[#475569] leading-relaxed mb-4">{service.description}</p>
                   <Link
-                    to="/contact"
+                    to={service.slug === "gutter-cleaning" ? "/" : `/services/${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E3A8A] hover:gap-2.5 transition-all"
                   >
-                    Get a Quote <ArrowRight className="w-4 h-4" />
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

@@ -70,7 +70,16 @@ export const NAV_LINKS = [
   { to: "/cost-guide", label: "Cost Guide" },
   { to: "/about", label: "About" },
   { to: "/service-areas", label: "Service Areas" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
+];
+
+export const SUB_SERVICES = [
+  { to: "/services/gutter-installation", label: "Gutter Installation", image: IMAGES.installation },
+  { to: "/services/gutter-repair", label: "Gutter Repair", image: IMAGES.repair },
+  { to: "/services/gutter-replacement", label: "Gutter Replacement", image: IMAGES.replacement },
+  { to: "/services/gutter-guards", label: "Gutter Guards", image: IMAGES.guards },
+  { to: "/services/downspout-services", label: "Downspout Services", image: IMAGES.downspout },
 ];
 
 export const PROCESS_STEPS = [

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Shield, Clock, Star, CheckCircle, Droplets, Home, Wrench, ArrowRight, MapPin, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BUSINESS, IMAGES, SERVICES, PROCESS_STEPS, TESTIMONIALS, FAQ_ITEMS, SERVICE_AREAS } from "@/lib/constants";
+import { BUSINESS, IMAGES, SERVICES, PROCESS_STEPS, TESTIMONIALS, FAQ_ITEMS } from "@/lib/constants";
 import ContactForm from "@/components/ContactForm";
 
 const HeroSection = () => (
@@ -92,7 +92,7 @@ const ServicesOverview = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {SERVICES.map((service, i) => (
           <Link
-            to="/services"
+            to={service.slug === "gutter-cleaning" ? "/" : `/services/${service.slug}`}
             key={i}
             className="service-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm group"
             data-testid={`service-card-${service.slug}`}
@@ -253,30 +253,7 @@ const TestimonialsSection = () => (
   </section>
 );
 
-const ServiceAreasPreview = () => (
-  <section className="py-20 md:py-28 bg-[#F8FAFC]" data-testid="areas-preview">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-10">
-        <p className="text-sm uppercase tracking-widest font-semibold text-[#1E3A8A] mb-3">Service Areas</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
-          Serving All of Jacksonville & Beyond
-        </h2>
-      </div>
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
-        {[...SERVICE_AREAS.main.slice(0, 6), ...SERVICE_AREAS.neighborhoods.slice(0, 6)].map((area, i) => (
-          <span key={i} className="inline-flex items-center gap-1.5 bg-white border border-slate-200 text-sm text-[#0F172A] px-4 py-2 rounded-lg">
-            <MapPin className="w-3.5 h-3.5 text-[#1E3A8A]" /> {area}
-          </span>
-        ))}
-      </div>
-      <div className="text-center">
-        <Link to="/service-areas" className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:gap-3 transition-all" data-testid="view-all-areas-btn">
-          View All Service Areas <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
-    </div>
-  </section>
-);
+const ServiceAreasPreview = () => null; // Moved to footer
 
 const FAQSection = () => (
   <section className="py-20 md:py-28 bg-white" data-testid="faq-section">

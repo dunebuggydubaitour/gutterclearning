@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
-import { NAV_LINKS, BUSINESS } from "@/lib/constants";
+import { NAV_LINKS, BUSINESS, SUB_SERVICES } from "@/lib/constants";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,18 +48,45 @@ const Header = () => {
 
             <nav className="hidden lg:flex items-center gap-8" data-testid="desktop-nav">
               {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  data-testid={`nav-link-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === link.to
-                      ? "text-[#1E3A8A] font-semibold"
-                      : "text-[#475569] hover:text-[#0F172A]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                link.label === "Services" ? (
+                  <div key={link.to} className="relative group">
+                    <Link
+                      to={link.to}
+                      data-testid="nav-link-services"
+                      className={`text-sm font-medium transition-colors duration-200 ${
+                        location.pathname.startsWith("/services")
+                          ? "text-[#1E3A8A] font-semibold"
+                          : "text-[#475569] hover:text-[#0F172A]"
+                      }`}
+                    >
+                      Services
+                    </Link>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="bg-white rounded-xl border border-slate-200 shadow-xl py-2 w-56">
+                        <Link to="/services" className="block px-4 py-2.5 text-sm font-semibold text-[#0F172A] hover:bg-[#F8FAFC] transition-colors">All Services</Link>
+                        <div className="border-t border-slate-100 my-1" />
+                        {SUB_SERVICES.map((s, i) => (
+                          <Link key={i} to={s.to} className="block px-4 py-2 text-sm text-[#475569] hover:bg-[#F8FAFC] hover:text-[#0F172A] transition-colors" data-testid={`dropdown-${s.label.toLowerCase().replace(/\s/g, "-")}`}>
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    data-testid={`nav-link-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      location.pathname === link.to
+                        ? "text-[#1E3A8A] font-semibold"
+                        : "text-[#475569] hover:text-[#0F172A]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </nav>
 

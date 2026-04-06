@@ -53,16 +53,32 @@ export default function CostGuidePage() {
       {/* Cost Tables */}
       <section className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Intro Content */}
+          <div className="bg-white rounded-xl border border-slate-200 p-8 mb-10">
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-4" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Understanding Gutter Cleaning Costs in Jacksonville</h2>
+            <div className="space-y-4 text-[#475569] leading-relaxed text-sm">
+              <p>At <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">Gutter Cleaning Jacksonville FL</Link>, we believe homeowners should understand exactly what they're paying for. Gutter cleaning is one of the most affordable ways to protect your home, but prices vary depending on property size, height, and gutter condition.</p>
+              <p>Because of Florida's rain and storms, gutters fill up faster with leaves, pine needles, and roof debris. That means regular cleaning isn't optional — it's essential home maintenance.</p>
+              <p>A proper gutter cleaning is more than just removing leaves. We remove debris by hand and tools, flush <Link to="/services/downspout-services" className="text-[#1E3A8A] font-semibold hover:underline">downspouts</Link>, and check that water drains correctly. We also clean roof-edge buildup and clear elbows where clogs often hide.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+              <div className="flex items-center gap-2 text-sm text-[#475569]"><CheckCircle className="w-4 h-4 text-emerald-500" /> Upfront pricing</div>
+              <div className="flex items-center gap-2 text-sm text-[#475569]"><CheckCircle className="w-4 h-4 text-emerald-500" /> No hidden charges</div>
+              <div className="flex items-center gap-2 text-sm text-[#475569]"><CheckCircle className="w-4 h-4 text-emerald-500" /> Pay after service</div>
+            </div>
+          </div>
+
           <PricingTable
             title="Gutter Cleaning Costs"
             description="Removes leaves, debris, and buildup so rainwater flows freely. Prevents overflow, fascia damage, and foundation issues."
             headers={["Home Type", "Cost Range", "Notes"]}
             rows={[
-              ["1-Story Home", "$90 - $160", "Most common range for standard homes"],
-              ["2-Story Home", "$150 - $270", "More labor and safety needs"],
-              ["3-Story Home", "$250 - $380", "Taller homes require extra safety"],
-              ["Downspout Cleaning", "$20 - $50 each", "Includes flushing and blockage removal"],
-              ["Heavy Debris Work", "+$30 - $100", "If clogged for long periods"],
+              ["1-Story Home", "$90 - $150", "Most common range for standard homes"],
+              ["2-Story Home", "$150 - $250", "More labor and safety needs"],
+              ["3-Story Home", "$250 - $350+", "Taller homes require extra safety"],
+              ["Downspout Clearing", "$20 - $40 each", "Includes flushing and blockage removal"],
+              ["Heavy Debris Work", "+$50 - $120", "If clogged for long periods"],
+              ["Same-Day / Emergency", "+$50 - $100", "Urgent storm-related service"],
             ]}
           />
 

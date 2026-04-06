@@ -7,6 +7,7 @@ Build a complete, high-converting, SEO-optimized website for "Gutter Cleaning Ja
 - **Backend**: FastAPI + MongoDB (leads management, admin auth)
 - **Frontend**: React + Tailwind CSS + Shadcn UI (multi-page SPA)
 - **Database**: MongoDB (leads collection)
+- **SEO**: react-helmet-async for per-page meta, JSON-LD schemas in index.html + dynamic per-page
 
 ## User Personas
 - Homeowners in Jacksonville, FL needing gutter services
@@ -22,37 +23,42 @@ Build a complete, high-converting, SEO-optimized website for "Gutter Cleaning Ja
 - 22 dynamic service area pages for local SEO
 - Before/After gallery for conversion proof
 - Long-form homepage content for SEO authority
+- 10 testimonials for social proof
 
 ## What's Been Implemented
 
 ### Phase 1 (Dec 2025)
-- Homepage: Hero with CTA, trust badges, services grid (6 services), why choose us, 10% discount banner, 6-step process, testimonials, FAQ accordion, CTA with inline form
-- Services Page: Detailed services, residential vs commercial comparison, 6-step process
-- About Page: Company story, stats, when to clean gutters, warning signs
-- Service Areas Page: Jacksonville areas grid, neighborhoods, Google Maps embed, near-me SEO content
-- Contact Page: Contact form, business info, emergency service card, Google Maps
-- Cost Guide Page: 4 pricing tables (cleaning, repair, installation, replacement)
-- Admin Panel: Password-protected (/admin), leads table with status toggle, stats cards, delete/refresh
-- SEO: Schema markup (LocalBusiness, Service, FAQ), meta tags, heading hierarchy
-- Backend API: POST /api/leads, GET /api/admin/leads, admin login/stats/delete/status-update
+- Homepage: Hero, trust badges, services grid, why choose us, 10% discount, 6-step process, testimonials, FAQ, CTA form
+- Services Page, About Page, Service Areas Page, Contact Page, Cost Guide Page
+- Admin Panel: Password-protected (/admin), leads management
+- Backend API: leads CRUD, admin auth
+- Base SEO: LocalBusiness, Service, FAQ, Organization, Review schemas in index.html
 
 ### Phase 2 (Dec 2025)
-- Sub-service pages: Gutter Installation, Repair, Replacement, Guards, Downspout Services
-- Blog List Page and Blog Post (How Long to Clean Gutters)
+- Sub-service pages: Installation, Repair, Replacement, Guards, Downspout
+- Blog List + Blog Post
 
-### Phase 3 (Feb 2026) - CURRENT
-- 22 Dynamic Service Area Detail Pages at /service-areas/:slug (St Johns, Atlantic Beach, Orange Park, Jacksonville Beach, Neptune Beach, Baldwin, Fernandina Beach, Yulee, Callahan, Nocatee, Ponte Vedra Beach, Arlington, Southside, Mandarin, Riverside, Avondale, San Marco, Baymeadows, Deerwood, Springfield, Ortega, Julington Creek)
-- Gallery Page (/gallery) with before/after project cards, stats, and CTA
-- 4 new homepage long-form SEO sections: Jacksonville's Trusted Services, About Gutters Cleaning Jax, When to Clean, Why Choose Jax Gutter Company
-- Footer updated with 22 service area links pointing to individual detail pages
-- Header nav updated with Gallery link
-- Heavy internal linking across all new content (service pages, area pages, gallery, cost guide)
+### Phase 3 (Feb 2026)
+- 22 Service Area Detail Pages at /service-areas/:slug
+- Gallery Page at /gallery
+- 4 homepage SEO text sections
+- Footer: 22 area links to detail pages
+- Header: Gallery in nav
+
+### Phase 4 (Feb 2026) - CURRENT
+- **Fixed:** JaxTrustedSection moved to right after Hero as intro (was misplaced after services)
+- **Fixed:** Duplicate "Why Choose" section removed — merged content into single WhyChooseUs
+- **Fixed:** Service Areas main page (/service-areas) now links all 22 areas to their detail pages (was static text)
+- **Added:** 10 testimonials from different customers/locations (was 3)
+- **Added:** react-helmet-async with HelmetProvider — SEO titles & descriptions on ALL 15 pages
+- **Added:** JSON-LD Service schema on each service area detail page (dynamic per city)
+- All pages now have keyword-rich title tags and meta descriptions
 
 ## Key Endpoints
-- POST /api/leads - Submit lead/quote request
-- GET /api/admin/leads - Fetch leads (admin auth required)
-- POST /api/admin/login - Admin login
-- GET /api/admin/stats - Lead statistics
+- POST /api/leads — Submit lead/quote
+- GET /api/admin/leads — Fetch leads (admin auth)
+- POST /api/admin/login — Admin login
+- GET /api/admin/stats — Lead statistics
 
 ## DB Schema
 - `leads`: {name, email, phone, service, message, status, created_at}
@@ -60,15 +66,14 @@ Build a complete, high-converting, SEO-optimized website for "Gutter Cleaning Ja
 ## Prioritized Backlog
 
 ### P1 (Next)
-- Comprehensive SEO & Schema Markup Update (meta titles/descriptions for all pages, LocalBusiness/FAQ/Service schemas on new pages)
-- Enhanced internal linking strategy (cross-link service pages to each other)
+- Enhanced internal linking strategy (cross-link service pages to each other more deeply)
 - Google Analytics integration
 - Email notifications for new leads
+- Sitemap.xml generation (auto-include all 22 area URLs)
 
 ### P2 (Future)
 - Online booking/scheduling system
 - Customer review integration (Google Reviews widget)
 - Live chat widget
 - SMS notifications for new leads
-- Sitemap.xml generation
 - More blog posts for content marketing

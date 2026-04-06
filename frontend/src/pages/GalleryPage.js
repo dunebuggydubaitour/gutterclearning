@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, Star, Shield, CheckCircle } from "lucide-react";
 import { BUSINESS, IMAGES } from "@/lib/constants";
 
@@ -12,6 +13,10 @@ const galleryItems = [
 export default function GalleryPage() {
   return (
     <div data-testid="gallery-page">
+      <Helmet>
+        <title>Before & After Gallery | Gutter Cleaning Jacksonville FL | Real Results</title>
+        <meta name="description" content="See real before and after photos from our gutter cleaning, repair, and installation projects in Jacksonville, FL. 5,000+ homes serviced. View our work." />
+      </Helmet>
       {/* Hero */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle, Shield, Star, MapPin, Home as HomeIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BUSINESS, IMAGES, SUB_SERVICES } from "@/lib/constants";
@@ -10,24 +10,29 @@ export default function ServiceAreaDetailPage() {
   const { slug } = useParams();
   const area = AREA_PAGES.find(a => a.slug === slug);
 
-  useEffect(() => {
-    if (area) {
-      const content = getAreaContent(area);
-      document.title = content.metaTitle;
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", content.metaDesc);
-    }
-    return () => {
-      document.title = "Gutter Cleaning Jacksonville FL | Free Estimates | Call Now";
-    };
-  }, [area]);
-
   if (!area) return <Navigate to="/service-areas" replace />;
   const content = getAreaContent(area);
   const otherAreas = AREA_PAGES.filter(a => a.slug !== slug).slice(0, 8);
 
   return (
     <div data-testid={`area-page-${slug}`}>
+      <Helmet>
+        <title>{content.metaTitle}</title>
+        <meta name="description" content={content.metaDesc} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Gutter Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Gutter Cleaning Jacksonville Florida",
+            "telephone": "877-736-0586",
+            "address": { "@type": "PostalAddress", "streetAddress": "3937 Spring Park Rd", "addressLocality": "Jacksonville", "addressRegion": "FL", "postalCode": "32207", "addressCountry": "US" }
+          },
+          "areaServed": { "@type": "City", "name": area.name, "containedInPlace": { "@type": "State", "name": "Florida" } },
+          "description": content.metaDesc
+        })}</script>
+      </Helmet>
       {/* Breadcrumb */}
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-[#475569]">

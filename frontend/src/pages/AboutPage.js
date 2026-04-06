@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle, Shield, Star, Award, Users, Clock } from "lucide-react";
 import { BUSINESS, IMAGES } from "@/lib/constants";
 
 export default function AboutPage() {
   return (
     <div data-testid="about-page">
+      <Helmet>
+        <title>About Gutter Cleaning Jacksonville FL | 20+ Years Experience</title>
+        <meta name="description" content="Learn about Gutter Cleaning Jacksonville Florida. 20+ years experience, 5,000+ happy customers. Licensed, insured, and locally owned. Serving all of Jacksonville, FL." />
+      </Helmet>
       {/* Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, Shield, Clock, Star, CheckCircle, Droplets, Home, Wrench, ArrowRight, MapPin, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BUSINESS, IMAGES, SERVICES, PROCESS_STEPS, TESTIMONIALS, FAQ_ITEMS } from "@/lib/constants";
@@ -29,18 +30,10 @@ const HeroSection = () => (
           Professional gutter cleaning in Jacksonville, Florida. Free estimates, same-day service, and a 10% new customer discount.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-emerald-700 transition-colors shadow-lg"
-            data-testid="hero-quote-btn"
-          >
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-emerald-700 transition-colors shadow-lg" data-testid="hero-quote-btn">
             Get a Free Quote <ArrowRight className="w-5 h-5" />
           </Link>
-          <a
-            href={`tel:${BUSINESS.phone}`}
-            className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors"
-            data-testid="hero-call-btn"
-          >
+          <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors" data-testid="hero-call-btn">
             <Phone className="w-5 h-5" /> Call {BUSINESS.phone}
           </a>
         </div>
@@ -123,19 +116,24 @@ const WhyChooseUs = () => (
         <div>
           <p className="text-sm uppercase tracking-widest font-semibold text-[#1E3A8A] mb-3">Why Choose Us</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
-            Why Choose Jacksonville Gutter Cleaning?
+            Why Choose Jacksonville Gutter Company?
           </h2>
-          <p className="text-[#475569] leading-relaxed mb-8">
-            When homeowners deal with clogged gutters, overflowing rainwater, or storm damage, they need a reliable company that responds fast. As a locally owned gutter service proudly serving Jacksonville, Florida, we're known for fast response times, honest pricing, and quality workmanship.
+          <p className="text-[#475569] leading-relaxed mb-4">
+            When homeowners and property managers in Jacksonville deal with clogged gutters, overflowing rainwater, roof leaks, or storm damage, they need a gutter company that responds fast and delivers quality workmanship. As a locally owned Jacksonville gutter company with <strong>20+ years of experience</strong>, we've earned our reputation as one of the most trusted gutter services in Northeast Florida.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <p className="text-[#475569] leading-relaxed mb-8">
+            Don't just take our word for it — we've helped <strong>5,000+ happy customers</strong> across Jacksonville protect their homes from water damage. From routine <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">gutter cleaning</Link> to complete <Link to="/services/gutter-replacement" className="text-[#1E3A8A] font-semibold hover:underline">system replacements</Link>, we handle every project with professionalism and care. View our <Link to="/gallery" className="text-[#1E3A8A] font-semibold hover:underline">before and after gallery</Link> to see real results.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { icon: Zap, title: "Quick Expert Service", desc: "Fast response times for all gutter needs" },
-              { icon: Shield, title: "Licensed & Insured", desc: "Full liability and workers' comp coverage" },
-              { icon: Clock, title: "24/7 Emergency Service", desc: "Available after storms and hurricanes" },
-              { icon: Star, title: "30-Day Warranty", desc: "Workmanship guarantee on all services" },
-              { icon: CheckCircle, title: "Free Estimates", desc: "No-obligation quotes before any work" },
-              { icon: Home, title: "Local & Trusted", desc: "Serving Jacksonville for 20+ years" },
+              { icon: Zap, title: "Over 20 Years Experience", desc: "Decades of hands-on experience with Jacksonville homes and Florida weather" },
+              { icon: Shield, title: "Fully Licensed & Insured", desc: "General liability and workers' compensation coverage on every job" },
+              { icon: Clock, title: "Same-Day & Emergency Service", desc: "Available 24/7 for emergencies, especially after hurricanes and storms" },
+              { icon: Star, title: "Free Estimates & Honest Pricing", desc: "No hidden fees. Written quotes before work begins. New customers get 10% off" },
+              { icon: CheckCircle, title: "30-Day Workmanship Warranty", desc: "We stand behind every job. If there's an issue, we'll make it right" },
+              { icon: Home, title: "Senior & Military Discounts", desc: "Special pricing for seniors, veterans, and active military families" },
+              { icon: Wrench, title: "Before & After Documentation", desc: "We photograph every job so you see exactly what was done" },
+              { icon: Droplets, title: "Eco-Friendly Debris Disposal", desc: "All debris bagged and disposed following Jacksonville city guidelines" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-4 rounded-lg bg-[#F8FAFC] border border-slate-100">
                 <div className="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -232,14 +230,15 @@ const TestimonialsSection = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
           What Our Customers Say
         </h2>
+        <p className="mt-4 text-[#475569] max-w-2xl mx-auto">Real reviews from Jacksonville homeowners who trust us with their gutter services.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {TESTIMONIALS.map((t, i) => (
-          <div key={i} className="bg-[#F8FAFC] rounded-xl border border-slate-200 p-8">
-            <div className="flex items-center gap-1 mb-4">
-              {[...Array(t.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+          <div key={i} className="bg-[#F8FAFC] rounded-xl border border-slate-200 p-6" data-testid={`testimonial-${i}`}>
+            <div className="flex items-center gap-1 mb-3">
+              {[...Array(t.rating)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
             </div>
-            <p className="text-[#0F172A] leading-relaxed mb-6">"{t.text}"</p>
+            <p className="text-[#0F172A] text-sm leading-relaxed mb-4">"{t.text}"</p>
             <div>
               <div className="font-semibold text-sm text-[#0F172A]">{t.name}</div>
               <div className="text-xs text-[#475569] flex items-center gap-1 mt-0.5">
@@ -252,8 +251,6 @@ const TestimonialsSection = () => (
     </div>
   </section>
 );
-
-const ServiceAreasPreview = () => null; // Moved to footer
 
 const JaxTrustedSection = () => (
   <section className="py-20 md:py-28 bg-white" data-testid="jax-trusted-section">
@@ -337,44 +334,6 @@ const WhenToCleanSection = () => (
   </section>
 );
 
-const WhyChooseJaxGutterSection = () => (
-  <section className="py-20 md:py-28 bg-[#F8FAFC]" data-testid="why-choose-jax-section">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight mb-8" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
-        Why Choose Jacksonville Gutter Company?
-      </h2>
-      <div className="prose prose-slate max-w-none space-y-5 text-[#475569] leading-relaxed">
-        <p>
-          When homeowners and property managers in Jacksonville deal with clogged gutters, overflowing rainwater, roof leaks, or storm damage, they need a gutter company that responds fast and delivers quality workmanship. As a locally owned Jacksonville gutter company with <strong>20+ years of experience</strong>, we've earned our reputation as one of the most trusted gutter services in Northeast Florida. Here's what sets us apart:
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
-          {[
-            { title: "Over 20 Years of Experience", desc: "Decades of hands-on experience with Jacksonville homes and Florida weather conditions." },
-            { title: "Fully Licensed & Insured", desc: "Complete general liability insurance and workers' compensation coverage on every job." },
-            { title: "Same-Day & Emergency Service", desc: "Available 24/7 for emergencies, especially after hurricanes and severe storms." },
-            { title: "Free Estimates & Honest Pricing", desc: "No hidden fees. Written quotes before any work begins. New customers get 10% off." },
-            { title: "30-Day Workmanship Warranty", desc: "We stand behind every job. If there's an issue, we'll come back and make it right." },
-            { title: "Senior & Military Discounts", desc: "We proudly offer special discounts to seniors, veterans, and active military families." },
-            { title: "Before & After Documentation", desc: "We photograph every job so you can see exactly what was done." },
-            { title: "Eco-Friendly Debris Disposal", desc: "All debris is bagged and disposed of following Jacksonville city guidelines." },
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-3 bg-white border border-slate-200 rounded-xl p-5">
-              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-bold text-[#0F172A] text-sm mb-1">{item.title}</h4>
-                <p className="text-xs text-[#475569] leading-relaxed">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p>
-          Don't just take our word for it — we've helped <strong>5,000+ happy customers</strong> across Jacksonville protect their homes from water damage. From routine <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">gutter cleaning</Link> to complete <Link to="/services/gutter-replacement" className="text-[#1E3A8A] font-semibold hover:underline">system replacements</Link>, we handle every project with the same professionalism and care. View our <Link to="/gallery" className="text-[#1E3A8A] font-semibold hover:underline">before and after gallery</Link> to see real results, or <Link to="/contact" className="text-[#1E3A8A] font-semibold hover:underline">request your free quote today</Link>.
-        </p>
-      </div>
-    </div>
-  </section>
-);
-
 const FAQSection = () => (
   <section className="py-20 md:py-28 bg-white" data-testid="faq-section">
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -442,17 +401,20 @@ const CTABanner = () => (
 export default function HomePage() {
   return (
     <div data-testid="home-page">
+      <Helmet>
+        <title>Gutter Cleaning Jacksonville FL | Licensed & Insured | Free Estimates | Call 877-736-0586</title>
+        <meta name="description" content="Professional gutter cleaning in Jacksonville, Florida. Licensed & insured with 20+ years experience. Same-day service, free estimates, 10% new customer discount. Call 877-736-0586." />
+      </Helmet>
       <HeroSection />
       <TrustBar />
-      <ServicesOverview />
       <JaxTrustedSection />
+      <ServicesOverview />
       <WhyChooseUs />
       <DiscountBanner />
       <AboutGuttersJaxSection />
       <ProcessSection />
       <WhenToCleanSection />
       <TestimonialsSection />
-      <WhyChooseJaxGutterSection />
       <FAQSection />
       <CTABanner />
     </div>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { BUSINESS, IMAGES } from "@/lib/constants";
 
@@ -16,6 +17,10 @@ export default function BlogListPage() {
 
   return (
     <div data-testid="blog-list-page">
+      <Helmet>
+        <title>Gutter Cleaning Blog Jacksonville FL | Tips, Guides & Expert Advice</title>
+        <meta name="description" content="Expert gutter cleaning tips and guides from Jacksonville's trusted gutter company. Learn about maintenance schedules, costs, and how to protect your home." />
+      </Helmet>
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm uppercase tracking-widest font-semibold text-emerald-400 mb-3">Blog</p>

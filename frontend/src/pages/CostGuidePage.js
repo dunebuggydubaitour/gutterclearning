@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 
@@ -37,6 +38,10 @@ const PricingTable = ({ title, description, headers, rows, note }) => (
 export default function CostGuidePage() {
   return (
     <div data-testid="cost-guide-page">
+      <Helmet>
+        <title>Gutter Cleaning Cost Jacksonville FL | 2026 Pricing Guide</title>
+        <meta name="description" content="How much does gutter cleaning cost in Jacksonville, FL? See 2026 pricing for cleaning ($90-$380), repair ($75-$350), installation ($900-$5,500), and replacement. Free estimates." />
+      </Helmet>
       {/* Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

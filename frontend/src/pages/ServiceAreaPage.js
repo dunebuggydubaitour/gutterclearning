@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, MapPin } from "lucide-react";
-import { BUSINESS, SERVICE_AREAS } from "@/lib/constants";
+import { BUSINESS } from "@/lib/constants";
+import { AREA_PAGES } from "@/data/serviceAreas";
 
 export default function ServiceAreaPage() {
+  const mainAreas = AREA_PAGES.filter(a => a.slug.endsWith("-fl"));
+  const neighborhoods = AREA_PAGES.filter(a => !a.slug.endsWith("-fl"));
+
   return (
     <div data-testid="service-area-page">
+      <Helmet>
+        <title>Gutter Cleaning Service Areas Jacksonville FL | All Locations</title>
+        <meta name="description" content="Professional gutter cleaning across Jacksonville, FL and surrounding areas. We serve St. Johns, Atlantic Beach, Orange Park, Ponte Vedra, Mandarin, and 15+ more locations. Free estimates." />
+      </Helmet>
+
       {/* Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -24,14 +34,20 @@ export default function ServiceAreaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
-                All of Jacksonville & Duval County
+                Jacksonville & Surrounding Cities
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {SERVICE_AREAS.main.map((area, i) => (
-                  <div key={i} className="flex items-center gap-2.5 bg-white border border-slate-200 rounded-lg px-4 py-3" data-testid={`area-${area.replace(/[,\s]/g, "-").toLowerCase()}`}>
+                {mainAreas.map((area, i) => (
+                  <Link
+                    key={i}
+                    to={`/service-areas/${area.slug}`}
+                    className="flex items-center gap-2.5 bg-white border border-slate-200 rounded-lg px-4 py-3 hover:border-[#1E3A8A] hover:shadow-sm transition-all"
+                    data-testid={`area-link-${area.slug}`}
+                  >
                     <MapPin className="w-4 h-4 text-[#1E3A8A] flex-shrink-0" />
-                    <span className="text-sm font-medium text-[#0F172A]">{area}</span>
-                  </div>
+                    <span className="text-sm font-medium text-[#0F172A]">{area.name}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 ml-auto" />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -40,11 +56,17 @@ export default function ServiceAreaPage() {
                 Jacksonville Neighborhoods
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {SERVICE_AREAS.neighborhoods.map((area, i) => (
-                  <div key={i} className="flex items-center gap-2.5 bg-white border border-slate-200 rounded-lg px-4 py-3" data-testid={`neighborhood-${area.replace(/[,\s]/g, "-").toLowerCase()}`}>
+                {neighborhoods.map((area, i) => (
+                  <Link
+                    key={i}
+                    to={`/service-areas/${area.slug}`}
+                    className="flex items-center gap-2.5 bg-white border border-slate-200 rounded-lg px-4 py-3 hover:border-emerald-500 hover:shadow-sm transition-all"
+                    data-testid={`area-link-${area.slug}`}
+                  >
                     <MapPin className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                    <span className="text-sm font-medium text-[#0F172A]">{area}</span>
-                  </div>
+                    <span className="text-sm font-medium text-[#0F172A]">{area.name}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 ml-auto" />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -90,9 +112,13 @@ export default function ServiceAreaPage() {
             <h3 className="text-lg font-bold text-[#0F172A] mb-3" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
               Our Service Coverage Includes:
             </h3>
-            <p className="text-sm text-[#475569] leading-relaxed">
-              {[...SERVICE_AREAS.main, ...SERVICE_AREAS.neighborhoods].join(" | ")}
-            </p>
+            <div className="flex flex-wrap gap-2">
+              {AREA_PAGES.map((area, i) => (
+                <Link key={i} to={`/service-areas/${area.slug}`} className="text-sm text-[#1E3A8A] font-medium hover:underline">
+                  {area.name}{i < AREA_PAGES.length - 1 ? "," : ""}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

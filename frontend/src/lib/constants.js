@@ -96,6 +96,13 @@ export const TESTIMONIALS = [
   { name: "Sarah M.", location: "Mandarin, Jacksonville", text: "Best gutter cleaning service in Jacksonville! They showed up on time, were incredibly professional, and left everything spotless. Highly recommend!", rating: 5 },
   { name: "Robert K.", location: "Riverside, Jacksonville", text: "After Hurricane season, our gutters were a mess. These guys came out same day and got everything flowing again. Great pricing too!", rating: 5 },
   { name: "Linda P.", location: "San Marco, Jacksonville", text: "We've used them three times now. Always reliable, fair pricing, and they do excellent work. Our go-to gutter company.", rating: 5 },
+  { name: "James T.", location: "Ponte Vedra Beach", text: "Our coastal home gets a lot of salt and sand buildup. This team did an amazing job cleaning and flushing our entire gutter system. Very thorough!", rating: 5 },
+  { name: "Maria G.", location: "Arlington, Jacksonville", text: "Called for an emergency after a bad storm knocked debris into our gutters. They were here within 2 hours and fixed everything. Lifesaver!", rating: 5 },
+  { name: "David W.", location: "Southside, Jacksonville", text: "I manage several rental properties and use them for all my gutter maintenance. Consistent quality, fair prices, and they always show up when they say they will.", rating: 5 },
+  { name: "Patricia H.", location: "St. Johns, FL", text: "Had gutter guards installed last year and just had them cleaned for the first time. Barely any debris! Great recommendation from the team. Worth every penny.", rating: 5 },
+  { name: "Michael R.", location: "Atlantic Beach, FL", text: "Very professional crew. They took before and after photos so I could see the difference. My downspouts were completely clogged and I didn't even know it.", rating: 5 },
+  { name: "Angela C.", location: "Avondale, Jacksonville", text: "We have a historic home with original gutters. They were so careful and knowledgeable about older systems. Cleaned everything perfectly without any damage.", rating: 5 },
+  { name: "Thomas B.", location: "Nocatee, FL", text: "New homeowner here and had no idea my gutters needed cleaning already. They did a full inspection, cleaned everything out, and gave me a maintenance schedule. Super helpful!", rating: 5 },
 ];
 
 export const FAQ_ITEMS = [

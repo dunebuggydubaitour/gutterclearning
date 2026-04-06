@@ -1,10 +1,15 @@
 import { Phone, MapPin, Mail, Clock, Shield, Star } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { BUSINESS } from "@/lib/constants";
 import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
     <div data-testid="contact-page">
+      <Helmet>
+        <title>Contact Gutter Cleaning Jacksonville FL | Free Estimates | Call 877-736-0586</title>
+        <meta name="description" content="Contact Gutter Cleaning Jacksonville Florida for a free estimate. Call 877-736-0586 or fill out our online form. Same-day service available. Licensed & insured." />
+      </Helmet>
       {/* Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

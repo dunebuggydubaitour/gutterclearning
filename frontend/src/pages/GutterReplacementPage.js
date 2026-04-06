@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle, Shield, Star, Home as HomeIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BUSINESS, IMAGES, SUB_SERVICES } from "@/lib/constants";
@@ -28,6 +29,10 @@ const RelatedServices = ({ current }) => (
 export default function GutterReplacementPage() {
   return (
     <div data-testid="gutter-replacement-page">
+      <Helmet>
+        <title>Gutter Replacement Jacksonville FL | Upgrade Your Gutters | Free Estimates</title>
+        <meta name="description" content="Professional gutter replacement in Jacksonville, FL. Upgrade old, damaged gutters with durable seamless systems. Licensed & insured. Free estimates. Call 877-736-0586." />
+      </Helmet>
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-[#475569]">
           <Link to="/" className="hover:text-[#1E3A8A]">Home</Link> / <Link to="/services" className="hover:text-[#1E3A8A]">Services</Link> / <span className="text-[#0F172A] font-medium">Gutter Replacement</span>

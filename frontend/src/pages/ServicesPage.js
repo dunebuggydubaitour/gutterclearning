@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle, Droplets, Shield, Wrench, Home } from "lucide-react";
 import { BUSINESS, SERVICES, IMAGES, PROCESS_STEPS, SUB_SERVICES } from "@/lib/constants";
 
 export default function ServicesPage() {
   return (
     <div data-testid="services-page">
+      <Helmet>
+        <title>Gutter Services Jacksonville FL | Cleaning, Repair, Installation, Guards</title>
+        <meta name="description" content="Complete gutter services in Jacksonville, Florida. Gutter cleaning, installation, repair, replacement, gutter guards, and downspout services. Licensed & insured. Free estimates." />
+      </Helmet>
       {/* Page Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

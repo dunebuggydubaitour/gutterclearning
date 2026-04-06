@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, ArrowRight, CheckCircle, Shield, Star, Home as HomeIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BUSINESS, IMAGES, SUB_SERVICES } from "@/lib/constants";
@@ -32,6 +33,10 @@ const RelatedServices = ({ current }) => (
 export default function GutterInstallationPage() {
   return (
     <div data-testid="gutter-installation-page">
+      <Helmet>
+        <title>Gutter Installation Jacksonville FL | Seamless Gutters | Free Estimates</title>
+        <meta name="description" content="Professional gutter installation in Jacksonville, FL. Seamless aluminum, copper, and steel gutters. Licensed & insured. Free estimates. Call 877-736-0586." />
+      </Helmet>
       {/* Breadcrumb */}
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-[#475569]">

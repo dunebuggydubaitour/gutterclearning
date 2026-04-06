@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { BUSINESS, IMAGES } from "@/lib/constants";
 
 export default function BlogPostCleaningTime() {
   return (
     <div data-testid="blog-post-cleaning-time">
+      <Helmet>
+        <title>How Long Does it Take to Clean Gutters? | Jacksonville FL Gutter Blog</title>
+        <meta name="description" content="How long does gutter cleaning take? 30 minutes to 2 hours for most homes. Learn what affects cleaning time, costs, and when to call a professional in Jacksonville, FL." />
+      </Helmet>
       {/* Breadcrumb */}
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-[#475569]">

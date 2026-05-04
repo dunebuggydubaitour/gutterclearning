@@ -20,10 +20,11 @@ const RelatedServices = ({ current }) => (
         ))}
       </div>
       <div className="flex flex-wrap justify-center gap-4 mt-8 text-sm">
-        <Link to="/" className="text-[#1E3A8A] font-medium hover:underline flex items-center gap-1"><HomeIcon className="w-3.5 h-3.5" /> Home</Link>
+        <Link to="/" className="text-[#1E3A8A] font-medium hover:underline flex items-center gap-1"><HomeIcon className="w-3.5 h-3.5" /> Gutter Cleaning Jacksonville FL</Link>
         <Link to="/services" className="text-[#1E3A8A] font-medium hover:underline">All Services</Link>
         <Link to="/cost-guide" className="text-[#1E3A8A] font-medium hover:underline">Cost Guide</Link>
         <Link to="/about" className="text-[#1E3A8A] font-medium hover:underline">About Us</Link>
+        <Link to="/gallery" className="text-[#1E3A8A] font-medium hover:underline">Gallery</Link>
         <Link to="/blog" className="text-[#1E3A8A] font-medium hover:underline">Blog</Link>
       </div>
     </div>

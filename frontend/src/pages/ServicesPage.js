@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 Residential Gutter Cleaning
               </h3>
               <p className="text-[#475569] leading-relaxed mb-4">
-                Our residential gutter cleaning service protects your home from Florida's heavy rains. We handle single-story, 2-story, and multi-level homes with safe, professional methods.
+                Our residential <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">gutter cleaning</Link> service protects your home from Florida's heavy rains. We handle single-story, 2-story, and multi-level homes with safe, professional methods.
               </p>
               <ul className="space-y-2">
                 {["Single & multi-story homes", "Downspout cleaning included", "Before & after inspection", "Safe, ladder-free methods available", "Same-day scheduling"].map((item, i) => (

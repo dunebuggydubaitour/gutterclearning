@@ -33,7 +33,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-[#475569] leading-relaxed">
                 <p>
-                  We are a locally trusted gutter company proudly serving homeowners from our base at {BUSINESS.addressShort}. With over 20 years of hands-on experience, we specialize in complete gutter services including cleaning, installation, repair, guards, downspouts, and full replacements.
+                  We are a locally trusted <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">gutter cleaning company in Jacksonville, FL</Link> proudly serving homeowners from our base at {BUSINESS.addressShort}. With over 20 years of hands-on experience, we specialize in complete gutter services including <Link to="/services" className="text-[#1E3A8A] font-semibold hover:underline">cleaning, installation, repair, guards, downspouts, and full replacements</Link>.
                 </p>
                 <p>
                   Our mission is simple &mdash; protect local homes from water damage with dependable, high-quality gutter solutions. Over the years, we've helped 5,000+ happy customers keep their homes safe from roof leaks, foundation issues, and costly water damage.
@@ -47,7 +47,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <img src={IMAGES.cleaning} alt="Gutter cleaning service in Jacksonville Florida" className="rounded-2xl shadow-lg w-full h-[500px] object-cover" />
+              <img src={IMAGES.cleaning} alt="Professional gutter cleaning service Jacksonville FL - about our company" className="rounded-2xl shadow-lg w-full h-[500px] object-cover" />
             </div>
           </div>
         </div>

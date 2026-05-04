@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, Shield, Clock, Star, CheckCircle, Droplets, Home, Wrench, ArrowRight, MapPin, Zap } from "lucide-react";
@@ -8,7 +9,7 @@ import ContactForm from "@/components/ContactForm";
 const HeroSection = () => (
   <section className="relative min-h-[600px] md:min-h-[700px] flex items-center" data-testid="hero-section">
     <div className="absolute inset-0">
-      <img src={IMAGES.hero} alt="Jacksonville Florida home exterior" className="w-full h-full object-cover" />
+      <img src={IMAGES.hero} alt="Professional gutter cleaning service Jacksonville FL - licensed and insured company" className="w-full h-full object-cover" />
       <div className="hero-overlay absolute inset-0" />
     </div>
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
@@ -148,7 +149,7 @@ const WhyChooseUs = () => (
           </div>
         </div>
         <div className="relative">
-          <img src={IMAGES.worker} alt="Professional gutter cleaning service Jacksonville" className="rounded-2xl shadow-lg w-full object-cover h-[500px]" />
+          <img src={IMAGES.worker} alt="Professional gutter cleaning technician Jacksonville FL - trusted local service" className="rounded-2xl shadow-lg w-full object-cover h-[500px]" />
           <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 border border-slate-200">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
@@ -222,35 +223,66 @@ const ProcessSection = () => (
   </section>
 );
 
-const TestimonialsSection = () => (
-  <section className="py-20 md:py-28 bg-white" data-testid="testimonials-section">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-14">
-        <p className="text-sm uppercase tracking-widest font-semibold text-[#1E3A8A] mb-3">Testimonials</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
-          What Our Customers Say
-        </h2>
-        <p className="mt-4 text-[#475569] max-w-2xl mx-auto">Real reviews from Jacksonville homeowners who trust us with their gutter services.</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {TESTIMONIALS.map((t, i) => (
-          <div key={i} className="bg-[#F8FAFC] rounded-xl border border-slate-200 p-6" data-testid={`testimonial-${i}`}>
-            <div className="flex items-center gap-1 mb-3">
-              {[...Array(t.rating)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
-            </div>
-            <p className="text-[#0F172A] text-sm leading-relaxed mb-4">"{t.text}"</p>
-            <div>
-              <div className="font-semibold text-sm text-[#0F172A]">{t.name}</div>
-              <div className="text-xs text-[#475569] flex items-center gap-1 mt-0.5">
-                <MapPin className="w-3 h-3" /> {t.location}
+const TestimonialsSection = () => {
+  const [current, setCurrent] = React.useState(0);
+  const visibleCount = typeof window !== 'undefined' && window.innerWidth >= 768 ? 3 : 1;
+  const maxIndex = TESTIMONIALS.length - visibleCount;
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => prev >= maxIndex ? 0 : prev + 1);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [maxIndex]);
+
+  return (
+    <section className="py-20 md:py-28 bg-white" data-testid="testimonials-section">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-sm uppercase tracking-widest font-semibold text-[#1E3A8A] mb-3">Testimonials</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>
+            What Our Customers Say
+          </h2>
+          <p className="mt-4 text-[#475569] max-w-2xl mx-auto">Real reviews from Jacksonville homeowners who trust us with their gutter services.</p>
+        </div>
+        <div className="relative overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${current * (100 / visibleCount)}%)` }}
+          >
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} className="flex-shrink-0 px-3" style={{ width: `${100 / visibleCount}%` }}>
+                <div className="bg-[#F8FAFC] rounded-xl border border-slate-200 p-6 h-full" data-testid={`testimonial-${i}`}>
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(t.rating)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
+                  </div>
+                  <p className="text-[#0F172A] text-sm leading-relaxed mb-4">"{t.text}"</p>
+                  <div>
+                    <div className="font-semibold text-sm text-[#0F172A]">{t.name}</div>
+                    <div className="text-xs text-[#475569] flex items-center gap-1 mt-0.5">
+                      <MapPin className="w-3 h-3" /> {t.location}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="flex justify-center items-center gap-2 mt-8">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${i === current ? 'bg-[#1E3A8A] w-6' : 'bg-slate-300'}`}
+              aria-label={`Go to slide ${i + 1}`}
+              data-testid={`testimonial-dot-${i}`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const JaxTrustedSection = () => (
   <section className="py-20 md:py-28 bg-white" data-testid="jax-trusted-section">

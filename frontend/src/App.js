@@ -19,6 +19,7 @@ import BlogListPage from "@/pages/BlogListPage";
 import BlogPostCleaningTime from "@/pages/BlogPostCleaningTime";
 import ServiceAreaDetailPage from "@/pages/ServiceAreaDetailPage";
 import GalleryPage from "@/pages/GalleryPage";
+import DisclaimerPage from "@/pages/DisclaimerPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -51,6 +52,7 @@ function AppLayout() {
           <Route path="/blog/how-long-does-it-take-to-clean-gutters" element={<BlogPostCleaningTime />} />
           <Route path="/service-areas/:slug" element={<ServiceAreaDetailPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>

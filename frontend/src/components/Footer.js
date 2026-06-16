@@ -78,6 +78,7 @@ const Footer = () => {
                 { to: "/service-areas", label: "Service Areas" },
                 { to: "/blog", label: "Blog" },
                 { to: "/contact", label: "Contact Us" },
+                { to: "/disclaimer", label: "Disclaimer" },
               ].map((link, i) => (
                 <li key={i}><Link to={link.to} className="text-slate-400 text-sm hover:text-white transition-colors flex items-center gap-1.5"><ChevronRight className="w-3 h-3" />{link.label}</Link></li>
               ))}

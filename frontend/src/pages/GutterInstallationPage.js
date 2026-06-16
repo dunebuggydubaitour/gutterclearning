@@ -36,7 +36,7 @@ export default function GutterInstallationPage() {
     <div data-testid="gutter-installation-page">
       <Helmet>
         <title>Gutter Installation Jacksonville FL | Seamless Gutters | Free Estimates</title>
-        <meta name="description" content="Professional gutter installation in Jacksonville, FL. Seamless aluminum, copper, and steel gutters. Licensed & insured. Free estimates. Call 877-736-0586." />
+        <meta name="description" content="Professional gutter installation in Jacksonville, FL. Seamless aluminum, copper, and steel gutters. Licensed & insured. Free estimates. Call +1 (323) 218-8886." />
       </Helmet>
       {/* Breadcrumb */}
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
@@ -64,7 +64,7 @@ export default function GutterInstallationPage() {
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg" data-testid="install-hero-quote">
                   Get a Free Quote <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
                   <Phone className="w-5 h-5" /> {BUSINESS.phone}
                 </a>
               </div>
@@ -178,7 +178,7 @@ export default function GutterInstallationPage() {
             <div>
               <h2 className="text-3xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Need Gutter Installation in Jacksonville?</h2>
               <p className="text-slate-300 mb-6">Get a free estimate for professional gutter installation. New customers receive 10% off.</p>
-              <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
+              <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl">
               <h3 className="text-xl font-bold text-[#0F172A] mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Get Your Free Quote</h3>

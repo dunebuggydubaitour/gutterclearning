@@ -123,7 +123,7 @@ export default function BlogPostCleaningTime() {
 
             <h2 className="text-2xl font-bold text-[#0F172A] mt-10 mb-4" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Final Thoughts</h2>
             <p className="text-[#475569] leading-relaxed">For most homes, <Link to="/" className="text-[#1E3A8A] font-semibold hover:underline">gutter cleaning</Link> ranges from 30 minutes to 2 hours depending on structure, debris levels, and system condition. Professional services provide faster and more reliable results. Routine cleaning ensures your gutter system continues protecting your home from water damage throughout the year.</p>
-            <p className="text-[#475569] leading-relaxed mt-4">Ready to schedule your gutter cleaning? <Link to="/contact" className="text-[#1E3A8A] font-semibold hover:underline">Contact us</Link> for a free estimate or call <a href={`tel:${BUSINESS.phone}`} className="text-[#1E3A8A] font-semibold hover:underline">{BUSINESS.phone}</a>. View our complete <Link to="/cost-guide" className="text-[#1E3A8A] font-semibold hover:underline">cost guide</Link> for pricing details.</p>
+            <p className="text-[#475569] leading-relaxed mt-4">Ready to schedule your gutter cleaning? <Link to="/contact" className="text-[#1E3A8A] font-semibold hover:underline">Contact us</Link> for a free estimate or call <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[#1E3A8A] font-semibold hover:underline">{BUSINESS.phone}</a>. View our complete <Link to="/cost-guide" className="text-[#1E3A8A] font-semibold hover:underline">cost guide</Link> for pricing details.</p>
           </div>
 
           {/* Back to Blog */}

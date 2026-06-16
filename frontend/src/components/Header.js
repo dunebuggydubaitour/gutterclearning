@@ -21,8 +21,11 @@ const Header = () => {
       <div className="bg-[#1E3A8A] text-white text-center text-sm py-2.5 px-4" data-testid="announcement-bar">
         <span className="font-semibold">New Customer? Get 10% OFF!</span>
         {" "}&mdash; Call{" "}
-        <a href={`tel:${BUSINESS.phone}`} className="underline font-bold hover:text-amber-300 transition-colors" data-testid="announcement-phone">
+        <a href={`tel:${BUSINESS.phoneRaw}`} className="underline font-bold hover:text-amber-300 transition-colors" data-testid="announcement-phone">
           {BUSINESS.phone}
+        </a>{" "}or{" "}
+        <a href={`tel:${BUSINESS.phone2Raw}`} className="underline font-bold hover:text-amber-300 transition-colors" data-testid="announcement-phone2">
+          {BUSINESS.phone2}
         </a>{" "}Today
       </div>
 
@@ -91,16 +94,26 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center gap-3">
+              <div className="hidden md:flex items-center gap-2">
+                <a
+                  href={`tel:${BUSINESS.phoneRaw}`}
+                  className="flex items-center gap-2 bg-[#10B981] text-white px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-700 transition-colors shadow-md"
+                  data-testid="header-call-btn"
+                >
+                  <Phone className="w-4 h-4" />
+                  {BUSINESS.phone}
+                </a>
+                <a
+                  href={`tel:${BUSINESS.phone2Raw}`}
+                  className="flex items-center gap-2 bg-[#1E3A8A] text-white px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-900 transition-colors shadow-md"
+                  data-testid="header-call-btn-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  {BUSINESS.phone2}
+                </a>
+              </div>
               <a
-                href={`tel:${BUSINESS.phone}`}
-                className="hidden md:flex items-center gap-2 bg-[#10B981] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-700 transition-colors shadow-md"
-                data-testid="header-call-btn"
-              >
-                <Phone className="w-4 h-4" />
-                {BUSINESS.phone}
-              </a>
-              <a
-                href={`tel:${BUSINESS.phone}`}
+                href={`tel:${BUSINESS.phoneRaw}`}
                 className="md:hidden flex items-center justify-center w-10 h-10 bg-[#10B981] text-white rounded-lg"
                 data-testid="header-call-btn-mobile"
               >
@@ -135,7 +148,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href={`tel:${BUSINESS.phone}`}
+                href={`tel:${BUSINESS.phoneRaw}`}
                 className="mt-3 flex items-center justify-center gap-2 bg-[#10B981] text-white py-3 rounded-lg font-semibold text-sm"
               >
                 <Phone className="w-4 h-4" />

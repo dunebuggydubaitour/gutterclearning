@@ -47,7 +47,7 @@ const ContactForm = ({ variant = "default" }) => {
         <p className="text-[#475569] mb-4">We received your request and will contact you shortly.</p>
         <p className="text-sm text-[#475569]">
           Need immediate help? Call{" "}
-          <a href={`tel:${BUSINESS.phone}`} className="text-[#1E3A8A] font-semibold">{BUSINESS.phone}</a>
+          <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[#1E3A8A] font-semibold">{BUSINESS.phone}</a>
         </p>
         <button
           onClick={() => setSuccess(false)}
@@ -150,7 +150,7 @@ const ContactForm = ({ variant = "default" }) => {
         {loading ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending...</> : "Get Your Free Quote"}
       </button>
       <p className="text-xs text-[#475569] text-center">
-        Or call us directly at <a href={`tel:${BUSINESS.phone}`} className="text-[#1E3A8A] font-semibold">{BUSINESS.phone}</a>
+        Or call us directly at <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[#1E3A8A] font-semibold">{BUSINESS.phone}</a>
       </p>
     </form>
   );

@@ -32,7 +32,7 @@ export default function GutterReplacementPage() {
     <div data-testid="gutter-replacement-page">
       <Helmet>
         <title>Gutter Replacement Jacksonville FL | Upgrade Your Gutters | Free Estimates</title>
-        <meta name="description" content="Professional gutter replacement in Jacksonville, FL. Upgrade old, damaged gutters with durable seamless systems. Licensed & insured. Free estimates. Call 877-736-0586." />
+        <meta name="description" content="Professional gutter replacement in Jacksonville, FL. Upgrade old, damaged gutters with durable seamless systems. Licensed & insured. Free estimates. Call +1 (323) 218-8886." />
       </Helmet>
       <div className="bg-[#F8FAFC] border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-[#475569]">
@@ -52,7 +52,7 @@ export default function GutterReplacementPage() {
               <p className="mt-4 text-slate-300 text-base md:text-lg leading-relaxed">Professional gutter replacement with quality materials. Same-day and emergency service available for storm damage.</p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg" data-testid="replacement-hero-quote">Get a Free Quote <ArrowRight className="w-5 h-5" /></Link>
-                <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -125,7 +125,7 @@ export default function GutterReplacementPage() {
             <div>
               <h2 className="text-3xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Need Gutter Replacement in Jacksonville?</h2>
               <p className="text-slate-300 mb-6">Get a free estimate. New customers receive 10% off their first service.</p>
-              <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
+              <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl">
               <h3 className="text-xl font-bold text-[#0F172A] mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Get Your Free Quote</h3>

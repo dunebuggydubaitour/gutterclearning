@@ -51,7 +51,7 @@ export default function GutterGuardsPage() {
               <p className="mt-4 text-slate-300 text-base md:text-lg leading-relaxed">High-quality gutter guard installation to reduce debris buildup, minimize maintenance, and keep your gutters flowing freely year-round.</p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg" data-testid="guards-hero-quote">Get a Free Quote <ArrowRight className="w-5 h-5" /></Link>
-                <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -134,7 +134,7 @@ export default function GutterGuardsPage() {
             <div>
               <h2 className="text-3xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Want Gutter Guards Installed?</h2>
               <p className="text-slate-300 mb-6">Stop cleaning gutters constantly. Get professional gutter guard installation today.</p>
-              <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
+              <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center gap-2 text-white text-lg font-bold"><Phone className="w-5 h-5" /> {BUSINESS.phone}</a>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl">
               <h3 className="text-xl font-bold text-[#0F172A] mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Get Your Free Quote</h3>

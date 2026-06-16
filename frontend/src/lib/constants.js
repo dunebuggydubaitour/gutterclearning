@@ -1,7 +1,10 @@
 export const BUSINESS = {
   name: "Gutter Cleaning Jacksonville Florida",
   shortName: "Jacksonville Gutter Cleaning",
-  phone: "877-736-0586",
+  phone: "+1 (323) 218-8886",
+  phoneRaw: "+13232188886",
+  phone2: "+1 (858) 898-5982",
+  phone2Raw: "+18588985982",
   email: "support@guttercleaningjacksonvilleflorida.com",
   address: "3937 Spring Park Rd, Jacksonville, FL 32207, United States",
   addressShort: "3937 Spring Park Rd, Jacksonville, FL 32207",

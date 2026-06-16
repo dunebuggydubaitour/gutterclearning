@@ -7,8 +7,8 @@ export default function ContactPage() {
   return (
     <div data-testid="contact-page">
       <Helmet>
-        <title>Contact Gutter Cleaning Jacksonville FL | Free Estimates | Call 877-736-0586</title>
-        <meta name="description" content="Contact Gutter Cleaning Jacksonville Florida for a free estimate. Call 877-736-0586 or fill out our online form. Same-day service available. Licensed & insured." />
+        <title>Contact Gutter Cleaning Jacksonville FL | Free Estimates | Call +1 (323) 218-8886</title>
+        <meta name="description" content="Contact Gutter Cleaning Jacksonville Florida for a free estimate. Call +1 (323) 218-8886 or fill out our online form. Same-day service available. Licensed & insured." />
       </Helmet>
       {/* Header */}
       <section className="bg-[#1E3A8A] py-16 md:py-20">
@@ -46,13 +46,24 @@ export default function ContactPage() {
                 </h3>
                 <ul className="space-y-5">
                   <li>
-                    <a href={`tel:${BUSINESS.phone}`} className="flex items-start gap-4 group" data-testid="contact-phone">
+                    <a href={`tel:${BUSINESS.phoneRaw}`} className="flex items-start gap-4 group" data-testid="contact-phone">
                       <div className="w-10 h-10 bg-[#1E3A8A]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A]/20 transition-colors">
                         <Phone className="w-5 h-5 text-[#1E3A8A]" />
                       </div>
                       <div>
                         <div className="text-xs text-[#475569] mb-0.5">Phone</div>
                         <div className="text-sm font-semibold text-[#0F172A]">{BUSINESS.phone}</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={`tel:${BUSINESS.phone2Raw}`} className="flex items-start gap-4 group" data-testid="contact-phone-2">
+                      <div className="w-10 h-10 bg-[#1E3A8A]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A]/20 transition-colors">
+                        <Phone className="w-5 h-5 text-[#1E3A8A]" />
+                      </div>
+                      <div>
+                        <div className="text-xs text-[#475569] mb-0.5">Phone 2</div>
+                        <div className="text-sm font-semibold text-[#0F172A]">{BUSINESS.phone2}</div>
                       </div>
                     </a>
                   </li>
@@ -97,7 +108,7 @@ export default function ContactPage() {
                   Storm damage? Overflowing gutters? We offer same-day emergency service. Don't wait for water damage to get worse.
                 </p>
                 <a
-                  href={`tel:${BUSINESS.phone}`}
+                  href={`tel:${BUSINESS.phoneRaw}`}
                   className="inline-flex items-center gap-2 bg-[#1E3A8A] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1E40AF] transition-colors shadow-md"
                   data-testid="emergency-call-btn"
                 >

@@ -34,8 +34,11 @@ const HeroSection = () => (
           <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-emerald-700 transition-colors shadow-lg" data-testid="hero-quote-btn">
             Get a Free Quote <ArrowRight className="w-5 h-5" />
           </Link>
-          <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors" data-testid="hero-call-btn">
-            <Phone className="w-5 h-5" /> Call {BUSINESS.phone}
+          <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-6 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors" data-testid="hero-call-btn">
+            <Phone className="w-5 h-5" /> {BUSINESS.phone}
+          </a>
+          <a href={`tel:${BUSINESS.phone2Raw}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-6 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors" data-testid="hero-call-btn-2">
+            <Phone className="w-5 h-5" /> {BUSINESS.phone2}
           </a>
         </div>
         <div className="flex items-center gap-6 mt-8">
@@ -188,7 +191,7 @@ const DiscountBanner = () => (
           Get Free Estimate Today
         </Link>
         <a
-          href={`tel:${BUSINESS.phone}`}
+          href={`tel:${BUSINESS.phoneRaw}`}
           className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
           data-testid="discount-call-btn"
         >
@@ -404,11 +407,18 @@ const CTABanner = () => (
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href={`tel:${BUSINESS.phone}`}
-              className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg"
+              href={`tel:${BUSINESS.phoneRaw}`}
+              className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-6 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg"
               data-testid="cta-call-btn"
             >
-              <Phone className="w-5 h-5" /> Call {BUSINESS.phone}
+              <Phone className="w-5 h-5" /> {BUSINESS.phone}
+            </a>
+            <a
+              href={`tel:${BUSINESS.phone2Raw}`}
+              className="inline-flex items-center justify-center gap-2 bg-[#10B981] text-white px-6 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg"
+              data-testid="cta-call-btn-2"
+            >
+              <Phone className="w-5 h-5" /> {BUSINESS.phone2}
             </a>
             <Link
               to="/contact"
@@ -434,8 +444,8 @@ export default function HomePage() {
   return (
     <div data-testid="home-page">
       <Helmet>
-        <title>Gutter Cleaning Jacksonville FL | Licensed & Insured | Free Estimates | Call 877-736-0586</title>
-        <meta name="description" content="Professional gutter cleaning in Jacksonville, Florida. Licensed & insured with 20+ years experience. Same-day service, free estimates, 10% new customer discount. Call 877-736-0586." />
+        <title>Gutter Cleaning Jacksonville FL | Licensed & Insured | Free Estimates | Call +1 (323) 218-8886</title>
+        <meta name="description" content="Professional gutter cleaning in Jacksonville, Florida. Licensed & insured with 20+ years experience. Same-day service, free estimates, 10% new customer discount. Call +1 (323) 218-8886." />
       </Helmet>
       <HeroSection />
       <TrustBar />

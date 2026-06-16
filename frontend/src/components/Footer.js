@@ -89,9 +89,15 @@ const Footer = () => {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-300 mb-6" style={{ fontFamily: "'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif" }}>Contact Us</h4>
             <ul className="space-y-4">
               <li>
-                <a href={`tel:${BUSINESS.phone}`} className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors" data-testid="footer-phone">
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors" data-testid="footer-phone">
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
                   <span className="text-sm font-semibold">{BUSINESS.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${BUSINESS.phone2Raw}`} className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors" data-testid="footer-phone-2">
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
+                  <span className="text-sm font-semibold">{BUSINESS.phone2}</span>
                 </a>
               </li>
               <li>
